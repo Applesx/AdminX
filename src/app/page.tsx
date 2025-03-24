@@ -1,95 +1,68 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from "next/image"
+import styles from "./page.module.css"
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Image src="/logo.svg" alt="ADMINX Logo" width={130} height={40} />
         </div>
+        <div className={styles.welcome}>
+          <h1>
+            Welcome, <span className={styles.username}>Amir</span>
+          </h1>
+          <p>Here's what's happening in your inventory</p>
+        </div>
+        <div className={styles.icons}>
+          <button className={styles.iconButton}>
+            <Image src="/settings.svg" alt="Settings" width={24} height={24} />
+          </button>
+          <button className={styles.iconButton}>
+            <Image src="/notifications.svg" alt="Notifications" width={24} height={24} />
+          </button>
+          <button className={styles.iconButton}>
+            <Image src="/profile.svg" alt="Profile" width={24} height={24} />
+          </button>
+        </div>
+      </header>
+
+      <main className={styles.main}>
+        <section className={styles.shelf}>
+          <div className={styles.shelfHeader}>
+            <h2>Shelf 1</h2>
+          </div>
+          <p className={styles.shelfDescription}>
+            Vape projects we have in the <span className={styles.location}>West cost</span>
+          </p>
+          <div className={styles.projectsGrid}>
+            <div className={styles.projectCard}></div>
+            <div className={styles.projectCard}></div>
+            <div className={styles.projectCard}></div>
+            <div className={styles.projectCard}></div>
+          </div>
+        </section>
+
+        <section className={styles.shelf}>
+          <div className={styles.shelfHeader}>
+            <h2>Shelf 2</h2>
+          </div>
+          <p className={styles.shelfDescription}>
+            Vape projects we have in the <span className={styles.location}>East cost</span>
+          </p>
+          <div className={styles.projectsGrid}>
+            <div className={styles.projectCard}></div>
+            <div className={styles.projectCard}></div>
+            <div className={styles.projectCard}></div>
+          </div>
+        </section>
       </main>
+
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <button className={styles.addShelfButton}>+Add Shelf</button>
+        <button className={styles.addBookButton}>+Add book</button>
       </footer>
     </div>
-  );
+  )
 }
+
